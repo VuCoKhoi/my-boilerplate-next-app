@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import useBlockIframe from '../customUse/useBlockIframe';
+import useBlockIframe from '../resources/customUse/useBlockIframe';
 
 const Home = () => {
   useBlockIframe();

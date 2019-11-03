@@ -29,9 +29,8 @@ function getCacheKey(req) {
 
 async function renderAndCache(req, res) {
   const key = getCacheKey(req);
-
   // If we have a page in the cache, let's serve it
-  if (ssrCache.has(key)) {
+  if (ssrCache.has(key) && process.env.NODE_ENV === 'production') {
     // console.log(`serving from cache ${key}`);
     res.setHeader('x-cache', 'HIT');
     res.send(ssrCache.get(key));
