@@ -1,16 +1,25 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core';
 import Head from 'next/head';
-import useBlockIframe from '../resources/customUse/useBlockIframe';
+import useBlockIframe from '../src/customUse/useBlockIframe';
+import Text from '../src/components/Text';
+
+const useStyles = makeStyles({
+  test: {
+    color: 'red',
+  },
+});
 
 const Home = () => {
+  const classes = useStyles();
   useBlockIframe();
   return (
-    <div>
+    <div className={classes.test}>
       <Head>
         <title>Home</title>
       </Head>
-
-      <div>boilerplate - power by khoivc</div>
+      <Text>boilerplate - power by khoivc</Text>
+      <Text>boilerplate - power by khoivc</Text>
     </div>
   );
 };
