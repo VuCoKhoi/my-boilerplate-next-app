@@ -2,6 +2,7 @@ const express = require('express');
 const next = require('next');
 const LRUCache = require('lru-cache');
 const path = require('path');
+const compression = require('compression');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -61,7 +62,7 @@ async function renderAndCache(req, res) {
 
 app.prepare().then(() => {
   const server = express();
-
+  server.use(compression());
   server.get('/favicon.ico', (req, res) =>
     res
       .status(200)

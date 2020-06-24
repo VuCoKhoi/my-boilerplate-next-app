@@ -5,6 +5,7 @@
   "homepage": "https://VuCoKhoi.github.io/my-boilerplate-next-app",
   "scripts": {
     "dev": "node server.js",
+    "analyze": "ANALYZE=true next build",
     "build": "next build",
     "start": "next build && NODE_ENV=production node server.js",
     "export": "next build && next export",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.10.1",
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "gh-pages": "^2.1.1",
     "lru-cache": "^5.1.1",
@@ -26,6 +28,7 @@
     "react-spinkit": "^3.0.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^9.4.4",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
