@@ -8,7 +8,7 @@
     "analyze": "ANALYZE=true next build",
     "build": "next build",
     "start": "next build && NODE_ENV=production node server.js",
-    "export": "next build && next export",
+    "export": "NODE_ENV=production next build && next export",
     "deploy:ghp": "yarn export && touch out/.nojekyll && gh-pages -t -d out",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
